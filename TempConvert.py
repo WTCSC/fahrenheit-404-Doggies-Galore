@@ -2,7 +2,7 @@
 global source
 global target
 global numvalue
-import os, sys, random
+import random
 
 from datetime import datetime
 hour=datetime.now().hour

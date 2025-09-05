@@ -54,7 +54,7 @@ else:
 #This is a function so it's easily loopable - get the source unit
 def ask():
     global source
-    source=input("What unit would you like to convert from? ")
+    source=input("What source unit would you like to convert FROM? ")
     if "celsius" in source.lower():
         source="C"
     elif "fahrenheit" in source.lower():
@@ -86,7 +86,7 @@ def ask():
 #Also loopable- get the target unit
 def targetask():
     global target
-    target=input("What target unit would you like to convert to? ")
+    target=input("What target unit would you like to convert TO? ")
     if "celsius" in target.lower():
         target="C"
     elif "fahrenheit" in target.lower():
@@ -195,6 +195,6 @@ while True:
                             print("Have a good Evening!")
                         else:
                             print("Have a good rest of your night!")
-                        exit()
+                        exit()#It's false advertising! It's only 198!
 
 #Why did I do this. The assignment was a temperature converter. My program is 200 lines of code.

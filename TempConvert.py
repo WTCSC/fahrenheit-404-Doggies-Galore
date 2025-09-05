@@ -79,6 +79,9 @@ def ask():
     elif "c" in source.lower():
         source="C"
         print("Got it, Celsius")
+    elif "from" in source.lower() and "to" in source.lower():
+        #You can't always assume humans will read instructions
+        print("I'm sorry, please enter only the SOURCE you'd like to convert FROM.")
     else:
         print("Erm- I'm not sure what you meant. May you please try again?")
         source="S"
@@ -111,6 +114,9 @@ def targetask():
     elif "c" in target.lower():
         target="C"
         print("Got it, Celsius")
+    elif "from" in target.lower() and "to" in target.lower():
+        #You can't always assume humans will learn
+        print("I'm sorry, please enter only the TARGET you'd like to convert TO.")
     else:
         print("Erm- I'm not sure what you meant. May you please try again?")
         target="S"
@@ -145,6 +151,7 @@ while True:
                 if numvalue == None:
                     inputtemp()
                 else:
+                    #Figure out which conversion needs to take place
                     if "C" in source:
                         if "C" in target:
                             print("Same as input!")
@@ -177,24 +184,27 @@ while True:
 
                     #Show the user the output and send them on their way
                     print(str(numvalue) + " degrees " + str(source) + " is equal to " + str(ans) + " degrees " + str(target))
-                    doagain=input("Would you like to preform another conversion?")
-                    if "yes" in (doagain) or"sure" in (doagain) or "y" in (doagain):
-                        #Clear values so that another operation can take place.
-                        target="S"
-                        source="S"
-                        numvalue=None
-                    else:
-                        print("Ok, cya!")
-                        if hour < 10:
-                            print("Have a good rest of your morning!")
-                        elif hour < 12:
-                            print("Have a good rest of your day!")
-                        elif hour < 17:
-                            print("Have a good Afternoon!")
-                        elif hour < 20:
-                            print("Have a good Evening!")
+                    while True:
+                        doagain=input("Would you like to preform another conversion?")
+                        if "yes" in (doagain) or "sure" in (doagain) or "y" in (doagain):
+                            #Clear values so that another operation can take place.
+                            target="S"
+                            source="S"
+                            numvalue=None
+                        elif "nope" in (doagain) or "no" in (doagain) or "n" in (doagain):
+                            print("Ok, cya!")
+                            if hour < 10:
+                                print("Have a good rest of your morning!")
+                            elif hour < 12:
+                                print("Have a good rest of your day!")
+                            elif hour < 17:
+                                print("Have a good Afternoon!")
+                            elif hour < 20:
+                                print("Have a good Evening!")
+                            else:
+                                print("Have a good rest of your night!")
+                            exit()
                         else:
-                            print("Have a good rest of your night!")
-                        exit()#It's false advertising! It's only 198!
+                            print("Huh?")#It's false advertising! It's only 208
 
-#Why did I do this. The assignment was a temperature converter. My program is 200 lines of code.
+#Why did I do this. The assignment was a temperature converter. My program is 210 lines of code.

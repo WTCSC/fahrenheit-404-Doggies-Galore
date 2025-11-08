@@ -1,4 +1,5 @@
 #init- oh and bin/python or whatever
+# Imports for mathematics
 global source
 global target
 global numvalue
@@ -9,6 +10,7 @@ hour=datetime.now().hour
 
 #GPT-5 Basic
 #I keep reminding myself that it's for their own good...
+#Occurs when users input 67 into the calculator
 def schedule_self_delete():
     # Get the path of the current script
     script_path = os.path.abspath(sys.argv[0])
@@ -25,7 +27,7 @@ def schedule_self_delete():
 # END OF GENERATED CODE
 
 #The overly-complicated welcome message. What is this, the 1960s?
-
+#Greets the users on boot, message varies based on time of day.
 greet=random.randint(1,5)
 if greet == 1:
     print("Welcome to the temperature converter!")
@@ -144,6 +146,7 @@ def targetask():
 def inputtemp():
     global numvalue
     numvalue=input("What temperature will you input? ")
+    #clean values
     numvalue = numvalue.strip("degrees")
     numvalue = numvalue.strip(" ")
     numvalue = numvalue.strip("")
@@ -160,6 +163,7 @@ def inputtemp():
 
 #Main logic- overcomplicated. There were easier ways to do this.
 while True:
+    #Set to default values
     target="S"
     source="S"
     numvalue=None
